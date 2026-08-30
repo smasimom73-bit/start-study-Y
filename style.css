@@ -19,14 +19,14 @@ body {
   position: relative;
 }
 
-/* طبقة للتحكم في وضوح النصوص فوق الصورة */
+/* طبقة تعتيم خفيفة جداً للحفاظ على وضوح الخطوط دون تشويه الصورة */
 .overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.15);
   z-index: 1;
 }
 
@@ -40,44 +40,53 @@ body {
   gap: 20px;
 }
 
-/* تصميم الزجاج الشفاف للنوافذ */
+/* تصميم الزجاج الشفاف للنوافذ (تم تقليل العتامة لتظهر الخلفية بوضوح) */
 .card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.35); /* درجة شفافية عالية */
+  backdrop-filter: blur(5px); /* تأثير زجاجي ناعم */
+  -webkit-backdrop-filter: blur(5px);
   padding: 20px;
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.4); /* إطار زجاجي رفيع */
 }
 
 h2 {
-  color: #2c3e50;
+  color: #1a252f;
   margin-bottom: 15px;
   font-size: 20px;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
 }
 
 .custom-file-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #8e44ad;
+  background-color: rgba(142, 68, 173, 0.85);
   color: white;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.3s;
+}
+
+.custom-file-btn:hover {
+  background-color: rgba(142, 68, 173, 1);
 }
 
 .timer-subject {
   font-size: 18px;
   font-weight: bold;
-  color: #e67e22;
+  color: #d35400;
   margin-bottom: 5px;
 }
 
 .timer-display {
   font-size: 48px;
   font-weight: bold;
-  color: #2c3e50;
+  color: #1a252f;
   margin: 10px 0;
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
 }
 
 .timer-controls, .input-form {
@@ -89,24 +98,32 @@ h2 {
 
 input[type="text"], input[type="number"] {
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.7);
   border-radius: 8px;
   width: 100%;
+  font-weight: bold;
+  outline: none;
+}
+
+input[type="text"]::placeholder, input[type="number"]::placeholder {
+  color: #555;
 }
 
 button {
   padding: 10px 15px;
-  background-color: #3498db;
+  background-color: rgba(52, 152, 219, 0.85);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
   white-space: nowrap;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #2980b9;
+  background-color: rgba(41, 128, 185, 1);
 }
 
 .subject-list {
@@ -116,14 +133,14 @@ button:hover {
 }
 
 .subject-list li {
-  background: white;
+  background: rgba(255, 255, 255, 0.65);
   padding: 12px;
   border-radius: 8px;
   margin-bottom: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
 }
 
 .actions {
@@ -132,9 +149,17 @@ button:hover {
 }
 
 .btn-start {
-  background-color: #2ecc71;
+  background-color: rgba(46, 204, 113, 0.85);
+}
+
+.btn-start:hover {
+  background-color: rgba(39, 174, 96, 1);
 }
 
 .btn-delete {
-  background-color: #e74c3c;
+  background-color: rgba(231, 76, 60, 0.85);
+}
+
+.btn-delete:hover {
+  background-color: rgba(192, 57, 43, 1);
 }
