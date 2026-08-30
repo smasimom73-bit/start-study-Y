@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>خطة الدراسة والأهداف</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    
+    <div class="card">
+      <h2>صورة الهدف التحفيزية</h2>
+      <label for="bgInput" class="custom-file-btn">اختاري صورة لتكون خلفية للشاشة</label>
+      <input type="file" id="bgInput" accept="image/*" style="display: none;">
+    </div>
+
+    <div class="card">
+      <h2>العداد التنازلي</h2>
+      <div class="timer-subject" id="currentSubject">اختر مادة للبدء</div>
+      <div class="timer-display" id="timerDisplay">00:00</div>
+      <div class="timer-controls">
+        <button onclick="startTimer()">بدء</button>
+        <button onclick="pauseTimer()">إيقاف مؤقت</button>
+        <button onclick="resetTimer()">إعادة ضبط</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>إضافة المواد والوقت</h2>
+      <div class="input-form">
+        <input type="text" id="subjectInput" placeholder="اسم المادة (مثلاً: أحياء)">
+        <input type="number" id="timeInput" placeholder="الوقت (بالدقائق)" min="1">
+        <button onclick="addSubject()">إضافة القائمة</button>
+      </div>
+
+      <ul id="subjectList" class="subject-list"></ul>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
